@@ -74,3 +74,13 @@ export const StyledShoppingCart = styled(ShoppingCartIcon)`
   color: ${(props) => props.theme['background-']};
   background-color: ${(props) => props.theme['yellow-dark']};
 `
+export const CoffeeList = styled.div`
+  height: 177.45vh;
+  max-width: 1440px;
+  padding: 32px 225px 157px 225px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 54px;
+`

@@ -1,14 +1,13 @@
-import { Header } from '../../components/Header'
 import { useTheme } from 'styled-components'
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import { ContainerHome, Heading, HomeContent, Info } from './styles'
+import { CoffeeList, ContainerHome, Heading, HomeContent, Info } from './styles'
 import ImgHome from '../../assets/Img-coffee.png'
+import { coffees } from '../../../data.json'
 
 export function Home() {
   const theme = useTheme()
   return (
     <div>
-      <Header />
       <ContainerHome>
         <HomeContent>
           <div>
@@ -66,6 +65,18 @@ export function Home() {
           <img src={ImgHome} alt="" />
         </HomeContent>
       </ContainerHome>
+
+      <CoffeeList>
+        <h2>Nossos cafés</h2>
+
+        {coffees.map((coffee) => (
+          <ul key={coffee.id}>
+            <li>{coffee.name}</li>
+            <li>{coffee.description}</li>
+            <img src={coffee.img} alt="" />
+          </ul>
+        ))}
+      </CoffeeList>
     </div>
   )
 }

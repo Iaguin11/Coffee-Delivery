@@ -1,20 +1,24 @@
 import { Aside, HeaderContainer } from './styles'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import logoCoffee from '../../assets/LogoCoffee/logoCoffe.svg'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={logoCoffee} alt="logoCoffee" />
+      <Link to="/">
+        <img src={logoCoffee} alt="logoCoffee" />
+      </Link>
 
       <Aside>
         <div>
           <MapPin size={22} weight="fill" />
           <span>Nova Friburgo, RJ</span>
         </div>
-        <a href="/">
+
+        <Link to={`cart`}>
           <ShoppingCart size={22} weight="fill" />
-        </a>
+        </Link>
       </Aside>
     </HeaderContainer>
   )
