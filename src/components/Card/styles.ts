@@ -4,43 +4,106 @@ export const CarContainer = styled.div`
   width: 256px;
   height: 310px;
   border-radius: 6px 36px;
+  padding: 0 20px 20px;
   background: ${(props) => props.theme['base-card']};
 
-  > div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  /* > div {
     display: flex;
     gap: 20px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  } */
+`
+export const Title = styled.h3`
+  margin-top: 16px;
+  color: ${(props) => props.theme['base-subtitle']};
+  font-family: 'Baloo 2';
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 130%;
+`
+export const Description = styled.span`
+  margin-top: 8px;
+  width: 216px;
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 130%;
 
-    > h5 {
-      color: ${(props) => props.theme['yellow-dark']};
-      font-family: 'Roboto';
-      font-size: 0.625rem;
-      font-weight: 700;
-      line-height: 130%;
-      text-transform: uppercase;
-    }
-    p {
-      width: 216px;
-      text-align: center;
-      font-family: 'Roboto';
-      font-size: 0.875rem;
-      font-weight: 400;
-      line-height: 130%;
+  color: ${(props) => props.theme['base-label']};
+`
+export const DivTags = styled.div`
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 
-      color: ${(props) => props.theme['base-label']};
-    }
+  span {
+    padding: 4px 8px;
+    border-radius: 100px;
+    background-color: ${(props) => props.theme['yellow-light']};
+    color: ${(props) => props.theme['yellow-dark']};
+    font-family: 'Roboto';
+    font-size: 0.625rem;
+    font-weight: 700;
+    line-height: 130%;
+    text-transform: uppercase;
   }
 `
-export const DivImg = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const ImgCoffee = styled.img`
+  margin-top: -20px;
+  max-width: 120px;
+  max-height: 120px;
+  align-self: center;
 `
-export const DivButton = styled.span`
+export const Control = styled.div`
   display: flex;
-  width: 200px;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  margin-top: 32px;
+`
+export const DivPrice = styled.span`
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+
+  span:first-child {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.25rem;
+    line-height: 130%;
+    font-weight: 700;
+    color: ${(props) => props.theme['base-text']};
+  }
+  span:last-child {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.5rem;
+    line-height: 130%;
+    font-weight: 800;
+    color: ${(props) => props.theme['base-text']};
+  }
+`
+export const Order = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  > button {
+    background-color: ${(props) => props.theme['yellow-dark']};
+    transition: background-color 0.2s;
+    border-radius: 6px;
+    padding: 8px;
+    display: flex;
+
+    &:hover {
+      background-color: ${(props) => props.theme['yellow-dark']};
+    }
+  }
 `

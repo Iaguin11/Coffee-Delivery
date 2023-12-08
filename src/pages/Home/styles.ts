@@ -15,7 +15,7 @@ export const ContainerHome = styled.section`
 `
 export const HomeContent = styled.div`
   max-width: 1160px;
-  padding: 92px 28px;
+  padding: 92px 20px;
   margin: 0 auto;
 
   display: flex;
@@ -56,7 +56,7 @@ export const Info = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 28px;
-  width: 567px;
+  /* width: 567px; */
 
   div {
     display: flex;
@@ -74,13 +74,27 @@ export const StyledShoppingCart = styled(ShoppingCartIcon)`
   color: ${(props) => props.theme['background-']};
   background-color: ${(props) => props.theme['yellow-dark']};
 `
-export const CoffeeList = styled.div`
+export const CoffeeList = styled.section`
   height: 177.45vh;
   max-width: 1440px;
-  padding: 32px 225px 157px 225px;
+  padding: 32px 225px 157px 160px;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 54px;
+
+  > h2 {
+    color: ${(props) => props.theme['base-subtitle']};
+    font-family: 'Baloo 2';
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 130%;
+  }
+
+  > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
 `
