@@ -67,6 +67,14 @@ export const Info = styled.div`
       padding: 8px;
       border-radius: 999px;
     }
+
+    span {
+      color: ${(props) => props.theme['base-text']};
+      font-family: 'Roboto';
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 130%;
+    }
   }
 `
 export const StyledShoppingCart = styled(ShoppingCartIcon)`
