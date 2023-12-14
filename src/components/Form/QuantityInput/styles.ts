@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   button svg {
-    color: ${({ theme }) => theme.colors.purple};
+    color: ${(props) => props.theme['purple-80']};
 
     transition: all 0.2s;
 

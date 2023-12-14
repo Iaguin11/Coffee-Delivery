@@ -8,8 +8,8 @@ export const Container = styled.label`
   gap: 12px;
   border-radius: 6px;
   border: 1px solid transparent;
-  background-color: ${({ theme }) => theme.colors['base-button']};
-  color: ${({ theme }) => theme.colors['base-text']};
+  background-color: ${(props) => props.theme['base-button']};
+  color: ${(props) => props.theme['base-text']};
   text-transform: uppercase;
 
   font-family: 'Roboto', sans-serif;
@@ -19,12 +19,12 @@ export const Container = styled.label`
   transition: all 0.2s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors['base-hover']};
+    background-color: ${(props) => props.theme['base-card']};
   }
 
   &[data-state='true'] {
-    background-color: ${({ theme }) => theme.colors['purple-light']};
-    border-color: ${({ theme }) => theme.colors.purple};
+    background-color: ${(props) => props.theme['purple-light']};
+    border-color: ${(props) => props.theme['purple-80']};
   }
 
   input {
@@ -32,6 +32,6 @@ export const Container = styled.label`
   }
 
   svg {
-    color: ${({ theme }) => theme.colors.purple};
+    color: ${(props) => props.theme['purple-80']};
   }
 `

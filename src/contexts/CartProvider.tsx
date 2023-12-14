@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useReducer } from 'react'
+import { ReactNode, createContext, useEffect, useReducer } from 'react'
 import { OrderInfo } from '../pages/Cart'
 import { useNavigate } from 'react-router-dom'
 import { CartReducer, Item, Order } from '../reducers/cart/reducer'
@@ -61,6 +61,13 @@ export function CartContextProvider({ children }: cartContextProviderProps) {
   function decrementItemQuantity(itemId: Item['id']) {
     dispatch(decrementItemQuantityAction(itemId))
   }
+  useEffect(() => {
+    if (cartState) {
+      const stateJSON = JSON.stringify(cartState)
+
+      localStorage.setItem('@coffee-delivery:cart-state-1.0', stateJSON)
+    }
+  }, [cartState])
   return (
     <CartContext.Provider
       value={{

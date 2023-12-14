@@ -10,14 +10,6 @@ export const CarContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-
-  /* > div {
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  } */
 `
 export const Title = styled.h3`
   margin-top: 16px;
@@ -70,7 +62,7 @@ export const Control = styled.div`
 
   margin-top: 32px;
 `
-export const DivPrice = styled.span`
+export const DivPrice = styled.div`
   display: flex;
   align-items: baseline;
   gap: 2px;
@@ -90,20 +82,22 @@ export const DivPrice = styled.span`
     color: ${(props) => props.theme['base-text']};
   }
 `
-export const Order = styled.div`
+export const Order = styled.div<{ $itemAdded?: boolean }>`
   display: flex;
   align-items: center;
   gap: 8px;
 
   > button {
-    background-color: ${(props) => props.theme['yellow-dark']};
+    background-color: ${({ theme, $itemAdded }) =>
+      $itemAdded ? theme['yellow-dark'] : theme['purple-dark']};
     transition: background-color 0.2s;
     border-radius: 6px;
     padding: 8px;
     display: flex;
 
     &:hover {
-      background-color: ${(props) => props.theme['yellow-dark']};
+      background-color: ${({ theme, $itemAdded }) =>
+        $itemAdded ? theme['yellow-2c'] : theme['purple-80']};
     }
   }
 `

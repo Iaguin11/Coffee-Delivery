@@ -147,7 +147,7 @@ export const CoffeeInfo = styled.div`
     transition: all 0.2s;
 
     &:hover {
-      background-color: ${({ theme }) => theme.colors['base-hover']};
+      background-color: ${(props) => props.theme['base-text']};
     }
     > svg {
       color: ${(props) => props.theme['purple-80']};
@@ -194,4 +194,25 @@ export const CartTotalInfo = styled.div`
       }
     }
   }
+`
+
+export const CheckoutButton = styled.button`
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  text-transform: uppercase;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  line-height: 160%;
+  font-weight: 700;
+  color: ${(props) => props.theme.white};
+  background-color: ${(props) => props.theme['yellow-2c']};
+
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: ${(props) => props.theme['yellow-dark']};
+  }
+  border-radius: 6px;
 `

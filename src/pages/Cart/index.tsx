@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import {
   AddressContainer,
   AddressForm,
@@ -11,13 +12,15 @@ import {
   Coffee,
   CoffeeInfo,
   CartTotalInfo,
+  CheckoutButton,
   CartTotal,
 } from './styles'
-import { SubmitHandle, SubmitHandler, useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { coffees } from '../../../data.json'
 import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers'
+
 import { useCart } from '../../hooks/useCart'
-import { incrementItemQuantityAction } from '../../reducers/cart/actions'
+
 import {
   Bank,
   CreditCard,
@@ -28,8 +31,9 @@ import {
 } from 'phosphor-react'
 import { TextInput } from '../../components/Form/TextInput'
 import { Radio } from '../../components/Form/Radio'
-import { Fragment } from 'react'
+
 import { QuantityInput } from '../../components/Form/QuantityInput'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 type FormInputs = {
   cep: number
@@ -70,7 +74,7 @@ export function Cart() {
     quantity: number
   }
 
-  const coffeesInCart = cart.map((item: CartItem) => {
+  const coffeesInCart = (cart || []).map((item: CartItem) => {
     const coffeeInfo = coffees.find((coffee) => coffee.id === item.id)
 
     if (!coffeeInfo) {
@@ -290,6 +294,9 @@ export function Cart() {
               </span>
             </div>
           </CartTotalInfo>
+          <CheckoutButton type="submit" form="order">
+            Confirma pedido
+          </CheckoutButton>
         </CartTotal>
       </CardOne>
     </CartContainer>
