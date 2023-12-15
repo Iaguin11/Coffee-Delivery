@@ -240,7 +240,7 @@ export function Cart() {
             <Fragment key={coffee.id}>
               <Coffee>
                 <div>
-                  <img src={coffee.img} alt="" />
+                  <img src={coffee.img} alt="coffee selected" />
 
                   <div>
                     <span>{coffee.name}</span>
